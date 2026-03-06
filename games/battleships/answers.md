@@ -72,20 +72,20 @@ You must list at least:
 - Fix approach:
 
 ### Bug 5
-- Symptom:
-- Steps to reproduce (exact inputs):
-- Expected (spec):
-- Actual:
-- Suspected root cause (file/function):
-- Fix approach:
+- Symptom: The game cannot distinguish between overlap and out-of-bounds accurately
+- Steps to reproduce (exact inputs): both placing a ship out-of-bounds and placing a ship on top of another ship return the same PlaceResult
+- Expected (spec): They should return different PlaceResult
+- Actual: It returns the same thing
+- Suspected root cause (file/function): it didn't check the InBounds
+- Fix approach: Check if the ship is in bounds before checking if CanPlaceShip
 
 ### Bug 6
-- Symptom:
-- Steps to reproduce (exact inputs):
-- Expected (spec):
-- Actual:
-- Suspected root cause (file/function):
-- Fix approach:
+- Symptom: The console message was not informative when player failed to place a ship (spec asks to distinguish OutOfBounds vs Overlap).
+- Steps to reproduce (exact inputs): place a ship on top of another ship or place a ship out-of-bounds
+- Expected (spec): the console message should be informative (specifiy what's the reason)
+- Actual: it output "Could not place ship. (buggy message, no detail)\n";
+- Suspected root cause (file/function): it didn't implement the PlaceResult message convertion function
+- Fix approach: implement it so it output the actual reason for stopping the player to place the ship
 
 (Add more if you find more.)
 
