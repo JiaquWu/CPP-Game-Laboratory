@@ -25,5 +25,17 @@ namespace bs {
         Overlap,
         Invalid
     };
+    inline const char* ToString(PlaceResult r)
+    {
+        switch (r)
+        {
+        case PlaceResult::Ok: return "Ok";
+        case PlaceResult::OutOfBounds: return "OutOfBounds";
+        case PlaceResult::Overlap: return "Overlap";
+        case PlaceResult::Invalid: return "Invalid";
+        default: return "Unknown";
+        }
+    }
+    
 
 } // namespace bs

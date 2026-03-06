@@ -84,7 +84,7 @@ int main()
             if (pr != PlaceResult::Ok)
             {
                 // BUG: not informative (spec asks to distinguish OutOfBounds vs Overlap).
-                std::cout << "Could not place ship. (buggy message, no detail)\n";
+                std::cout << "Could not place ship, reason: \n" << ToString(pr);
                 std::cout << "Press Enter...\n";
                 std::getline(std::cin, line);
             }

@@ -51,7 +51,9 @@ namespace bs {
     PlaceResult Board::PlaceShip(const Ship& ship)
     {
         if (ship.length <= 0) return PlaceResult::Invalid;
-
+        
+        if (!InBounds(ship.start))
+            return PlaceResult::OutOfBounds;
         if (!CanPlaceShip(ship))
         {
             // BUG: cannot distinguish between overlap and out-of-bounds accurately
