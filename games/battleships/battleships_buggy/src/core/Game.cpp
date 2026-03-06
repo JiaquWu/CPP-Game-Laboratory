@@ -39,7 +39,7 @@ namespace bs {
     {
         // Intended by spec: only proceed when BOTH players placed ALL ships.
         // BUG: proceeds when *current player* finished, ignoring the other.
-        if (m_setupPlacedCount[m_current] >= static_cast<int>(m_shipLengths.size()))
+        if (m_setupPlacedCount[m_current] >= static_cast<int>(m_shipLengths.size()) && m_setupPlacedCount[1] > 0)
         {
             m_state = GameState::Playing;
             m_current = 0; // Player 1 starts

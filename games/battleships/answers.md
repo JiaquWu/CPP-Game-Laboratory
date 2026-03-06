@@ -40,20 +40,20 @@ You must list at least:
 - 3 robustness issues (bad input handling, silent failures, crashes, etc.)
 
 ### Bug 1
-- Symptom: You can place the last part of a ship on top of another ship
+- Symptom: You can place the last part of a ship on top of another ship vertically
 - Steps to reproduce (exact inputs): place a ship on b3 and then a 3+ long ship on b1 vertically
 - Expected (spec): you fail to place the ship
 - Actual: it places the ship
-- Suspected root cause (file/function): it was checking size -1
-- Fix approach: removing the -1
+- Suspected root cause (file/function): Board::CanPlaceShip
+- Fix approach: removing the -1 from vertical orientation
 
 ### Bug 2
-- Symptom:
-- Steps to reproduce (exact inputs):
-- Expected (spec):
-- Actual:
-- Suspected root cause (file/function):
-- Fix approach:
+- Symptom: Player 2 can not place their ships
+- Steps to reproduce (exact inputs): Place app of player 1s ships
+- Expected (spec): Player 2 gets to place their ships
+- Actual: Game starts with player 2 having 0 ships
+- Suspected root cause (file/function): Game::FinishSetupIfReady()
+- Fix approach: adding a check in the if to see if player 2 has placed any ships
 
 ### Bug 3
 - Symptom:
