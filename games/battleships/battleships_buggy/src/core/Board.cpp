@@ -38,9 +38,9 @@ namespace bs {
 
             if (!InBounds(c)) return false;
 
-            if (ship.orientation == Orientation::Vertical && i == ship.length - 1)
+            if (ship.orientation == Orientation::Vertical && i == ship.length)
             {
-                continue; // BUG: last segment not checked for overlap
+                continue;
             }
 
             if (GetCell(c) != Cell::Empty) return false;
