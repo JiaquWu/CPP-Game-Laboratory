@@ -2,8 +2,8 @@
 
 ## Team
 - Team name:
-- Partner A:
-- Partner B:
+- Partner A: Alex
+- Partner B: Jiaqu
 
 ---
 
@@ -40,12 +40,12 @@ You must list at least:
 - 3 robustness issues (bad input handling, silent failures, crashes, etc.)
 
 ### Bug 1
-- Symptom:
-- Steps to reproduce (exact inputs):
-- Expected (spec):
-- Actual:
-- Suspected root cause (file/function):
-- Fix approach:
+- Symptom: You can place the last part of a ship on top of another ship
+- Steps to reproduce (exact inputs): place a ship on b3 and then a 3+ long ship on b1 vertically
+- Expected (spec): you fail to place the ship
+- Actual: it places the ship
+- Suspected root cause (file/function): it was checking size -1
+- Fix approach: removing the -1
 
 ### Bug 2
 - Symptom:
